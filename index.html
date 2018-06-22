@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>无标题文档</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+<script src="js/jquery.js"></script>
+<script src="js/fn.js"></script>
+
+<style>
+html,body{position:relative;top:0; left:0; right:0; bottom:0;}
+body{ padding:2rem 0 1.3rem 0; color:#333; font-size:0.35rem; background:rgb(230,230,230);}
+*{ padding:0; margin:0; outline:none; text-decoration:none; list-style:none;}
+span.pull-right{margin-right:0.2rem; color:#666; font-size:0.2rem;}
+.container{ padding:0 !important;}
+.relatives{ position:relative;}
+.absolutes{ position:absolute; display:inline-block; border:4px solid #e30; right:-2px; top:-2px; border-radius:50%;}
+/*header*/
+header{ width:100%; height:2rem; background:rgb(250,250,250); position:fixed; top:0; left:0; z-index:999; font-weight:bold;}
+header>div{ width:100%;}
+header .header_top{ padding:0.2rem 0.2rem; height:1.2rem; text-align:center; background: url(img/header.jpg); background-size:cover; line-height:0.8rem;}
+header .header_top div{ float:left; height:100%; background:none;}
+header .header_top div.imgDiv{ height:0.8rem; width:0.8rem; border-radius:50%; padding:0;}
+header .header_top div.imgDiv img{ display:block; width:0.8rem; height:0.8rem;border-radius:50%;}
+header .header_top div.imgText{ padding:0 !important;}
+header .header_nav{ line-height:0.8rem; font-size:0.3rem; color:#333; height:0.8rem;}
+header .header_nav li{ height:0.8rem; font-size:0.3rem; padding:0 0.3rem;}
+
+/*main*/
+#main{ width:100%; padding:0 0.15rem;}
+#main>.zx_divs{height:2.5rem; margin-top:0.1rem !important;}
+.carousel-inner>.item{ height:2.5rem;}
+.carousel-inner>.item>img{ width:100%; height:2.5rem; display:block;}
+/*zx*/
+#main .ajaxs{ width:100%; background:rgba(0,0,0,0); margin:0; padding:0.1rem 0;}
+#main .main_items{ height:2.2rem !important; width:100%; background:#fff; padding:0.1rem;}
+#main .main_items .items_img{ width:2rem; height:100%; background:#ccc; margin-right:0.1rem;}
+#main .main_items .items_img img{ width:100%; height:100%; display:block; display:inline-block; padding:0.1rem; box-shadow:0 0 1px #666; background-color:#FFF; border-radius:0.1rem;}
+#main .main_items .items_text{ width:4.9rem; height:100%;}
+#main .main_items .items_text .text_p1{ max-width:100%; height:0.45rem; color:#333; margin-bottom:0.1rem; font-size:0.3rem; font-weight:bold; line-height:0.45rem;}
+#main .main_items .items_text .text_p2{ max-width:100%; height:1.05rem; color:#999; margin-bottom:0.1rem; overflow:hidden; font-size:0.22rem;}
+#main .main_items .items_text .text_p3{ max-width:80%; height:0.35rem; color:#8a6d3b; margin-bottom:0; font-size:0.1rem; line-height:0.35rem;}
+
+/*zx*/
+#main .xx_items{ width:100%; padding:0.25rem 0 0.25rem 0.2rem; background:#fff; margin-top:0.2rem; font-size:0.35rem; margin-bottom:0.4rem;}
+#main .panel-group div{ border:0 !important; border-radius:0; margin:0 !important;}
+#main .panel-group .panel .panel-heading{ padding:0.25rem 0 0.25rem 0.2rem;}
+#main .panel-group a{ text-decoration:none !important;}
+#main .panel-body{ background:#f8f8f8; padding:0 !important;}
+#main .body-items{ width:100%; padding:0.15rem 0.1rem; box-shadow:0 1px #ccc;}
+#main .body-items img{ display:inline-block; width:1.2rem; height:1.2rem; border-radius:50%; box-shadow:0 0 1px #333;}
+#main .body-items p{ display:inline-block; font-size:0.28rem; margin:0 !important; margin-left:0.1rem !important;}
+#main .body-items p span.sexSpan{ background:#6cf; color:#FFF; font-size:0.2rem; padding:1px 0.1rem; border-radius:0.1rem;}
+#main .body-items p span.dqSpan{color:#999; font-size:0.2rem;}
+#main .body-items p.pull-right{ color:#888; font-size:0.1rem;}
+#main .body-items p.pull-right button{ border:1px solid #8a6d3b; font-size:0.2rem; padding:0.06rem 0.3rem; color:#8a6d3b; border-radius:0.1rem;}
+
+/*footer*/
+footer{ width:100% !important; height:1.2rem; background:rgb(240,240,240); position:fixed; bottom:0; left:0;}
+footer div{ height:1.2rem; color:#999; font-size:0.2rem; text-align:center; padding:0.2rem 0; text-shadow:0 1px #fff;}
+footer div.col-xs-2{ width:20% !important;}
+footer div span{ font-size:0.4rem;}
+
+@media screen and (min-width: 480px) {
+   html{border-radius:10px; width:375px !important; font-size:50px !important; margin:20px auto; height:667px !important; background-color:#f9f9f9 !important; overflow:hidden; box-shadow:0 0 1px #000,5px 5px 20px #666;}
+   body{ border-radius:10px; box-shadow:0 0 1px #000,5px 5px 20px #666;}
+   header{ width:375px;top: 0; left: 0; bottom: 0; right: 0; margin:20px auto 0 auto; border-radius:10px 10px 0 0;}
+   header .header_top{border-radius:10px 10px 0 0;}
+   footer{ width:375px !important; margin:0 0 0 -187.5px !important; left:50%; top:717px; border-radius:0 0 10px 10px;}
+}
+</style>
+</head>
+<body>
+<!--头部板块-->
+<header>
+ <div class="header_top text-warning">
+   <div class="imgDiv col-xs-1 relatives"><img src="img/tx.jpg"/><span class="absolutes"></span></div>
+   <div class="imgText col-xs-9">英雄联盟</div>
+   <div class="imgInput"><span class="glyphicon glyphicon-search"></span></div>
+   <div class="clearfix"></div>
+ </div>
+ <div class="header_nav">
+   <li class="col-xs-2">最新</li>
+   <li class="col-xs-3">英雄圈</li>
+   <li class="col-xs-2">视频</li>
+   <li class="col-xs-2">赛事</li>
+   <li class="col-xs-2">专栏</li>
+   <div class="clearfix"></div>
+ </div>
+</header>
+<!--主体板块-->
+<div id="main">
+  
+</div>
+
+<!--底部板块-->
+<footer class="container">
+ <div class="pull-left col-xs-2 relatives zx" onClick="zx()">
+   <span class="glyphicon glyphicon-inbox"></span></br>
+   资讯
+ </div>
+ <div class="pull-left col-xs-2 relatives xx" onClick="xx()">
+   <span class="glyphicon glyphicon-print"></span></br>
+   消息
+ </div>
+ <div class="pull-left col-xs-2 relatives sc" onClick="sc()">
+   <span class="glyphicon glyphicon-shopping-cart"></span></br>
+   商城
+ </div>
+ <div class="pull-left col-xs-2 relatives fx" onClick="fx()">
+   <span class="glyphicon glyphicon-eye-open"></span></br>
+   发现
+ </div>
+ <div class="pull-left col-xs-2 relatives w" onClick="w()">
+   <span class="glyphicon glyphicon-user"></span></br>
+   我
+ </div>
+</footer>
+
+<script src="js/bootstrap.min.js"></script>
+<script>
+var b1=true,b2=false,b3=false,b4=false,b5=false;
+$(function(e) {
+	zx();
+});
+$("footer div.pull-left:eq(0)").css({"color":"#8a6d3b"});
+$("footer div.pull-left").click(function(){
+  $(this).css({"color":"#8a6d3b"}).siblings().css({"color":"#999"});
+})
+
+$(".header_nav li:eq(0)").css({"color":"#8a6d3b"});
+$(".header_nav li").click(function(){
+  $(this).css({"color":"#8a6d3b"}).siblings().css({"color":"#333"});
+})
+var n=1;
+var zx=function(){
+  n=1;
+  b1=true;
+  $.post("zx.php",function(data,status){
+	    $("#main").html(data);
+        $.post("info.php",function(data,status){$("#main").append(data);});  
+  }); 
+}
+
+var xx=function(){
+  $.post("xx.php",function(data,status){
+        $("#main").html(data);  
+  });
+  b1=false;
+  n=0;
+}
+
+var sc=function(){
+  $("#main").html("sc");
+  b1=false;
+  n=0;
+}
+
+var fx=function(){
+  $("#main").html("fx");
+  b1=false;
+  n=0;
+}
+
+var w=function(){
+  $("#main").html("w");
+  b1=false;
+  n=0;
+}
+
+$(document).scroll(function(){
+  var moveY=$(document).scrollTop();
+  if(moveY.toFixed(0)>=($(document).height()-$(window).height())&&b1){
+	 $.post("info.php",{moren:n},function(data,status){
+		 $("#main").append(data);
+		 n++;
+	 });
+  } 
+})
+</script>
+
+</body>
+</html>
